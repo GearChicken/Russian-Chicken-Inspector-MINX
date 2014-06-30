@@ -7,15 +7,29 @@
 # Compiled Dynamic libraries
 *.so
 *.dylib
-*.dll
 
 # Compiled Static libraries
 *.lai
 *.la
 *.a
-*.lib
 
-# Executables
+# bin folder
+bin/
+
+# windows binaries
+*.ilk
+*.pdb
 *.exe
-*.out
-*.app
+
+#logs
+*.tlog
+*.log
+
+Debug/
+Release/
+MINX/Debug/
+MINX/Release/
+packages/
+*.sdf
+*.suo
+*.opensdf
