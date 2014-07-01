@@ -1,21 +1,44 @@
 
 #include "RussianChickenInspector_MINX.h"
+#include <MINX/Graphics/TextureBatch.h>
+#include <MINX/Graphics/ShaderFactory.h>
+#include <MINX/Graphics/Font.h>
+#include <MINX/Input/Keyboard.h>
+#include <MINX/Input/Mouse.h>
+
+using namespace MINX;
+using namespace MINX::Graphics;
+using namespace MINX::Input;
 
 using namespace RussianChickenInspector;
+
+const int PLAYER_SPAWN_X = 100;
+const int PLAYER_SPAWN_Y = 100;
+
+const int POPUP_DISPLAY_POSITION_X = 10;
+const int POPUP_DISPLAY_POSITION_Y = 10;
+
+TextureBatch * texBatch;
+
+Font * font;
+
+Keyboard * keyboard;
+Mouse * mouse;
 
 RussianChickenInspector_MINX::RussianChickenInspector_MINX()
 {
 	//This is the constructor. Put stuff here that should happen when the Game is created.
 
 	isRunning = true;
-	Game::SetVideoOptions(640, 480, false, "RussianChickenInspector_MINX");
+	Game::SetVideoOptions(800, 600, false, "RussianChickenInspector_MINX");
 }
 
 void RussianChickenInspector_MINX::Initialize()
 {
-	//Put stuff here that should happen when the Game is initialized.
-
 	Game::Initialize();
+	texBatch = new TextureBatch(ShaderFactory::GetInstance()->GetShaderAtIndex(0));
+	keyboard = new Keyboard(this);
+	mouse = new Mouse(this);
 }
 
 void RussianChickenInspector_MINX::LoadContent()
