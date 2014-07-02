@@ -1,7 +1,12 @@
 #include "DirtGenerator.h"
 #include "MathHelper.h"
 
-using namespace RussianChickenInspector_MINX::Graphics;
+using namespace RussianChickenInspector::Graphics;
+
+TextureGenerator* DirtGenerator::GetInstance()
+{
+	return (instance == NULL) ? instance = new DirtGenerator() : instance;
+}
 
 Color* DirtGenerator::GenerateTexData(Color* texData, Color* color, int width, int height)
 {
@@ -31,7 +36,7 @@ Color* DirtGenerator::GenerateTexData(Color* texData, Color* color, int width, i
 				subtractiveColor = Color(0, 0, 0, 0);
 			} else
 			{
-				subtractiveColor = Color(25, 25, 25, 0);
+				subtractiveColor = Color(25, 25, 23, 0);
 			}
 			texData[y * width + x] = AddColor(baseColor, subtractiveColor);
 		}

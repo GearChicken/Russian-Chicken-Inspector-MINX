@@ -1,17 +1,17 @@
-#include "BrickWallGenerator.h"
+#include "PineTreeStumpGenerator.h"
 #include "MathHelper.h"
 
 using namespace RussianChickenInspector::Graphics;
 
-TextureGenerator* BrickWallGenerator::GetInstance()
+TextureGenerator* PineTreeStumpGenerator::GetInstance()
 {
-	return (instance == NULL) ? instance = new BrickWallGenerator() : instance;
+	return (instance == NULL) ? instance = new PineTreeStumpGenerator() : instance;
 }
 
-Color* BrickWallGenerator::GenerateTexData(Color* texData, Color* color, int width, int height)
+Color* PineTreeStumpGenerator::GenerateTexData(Color* texData, Color* color, int width, int height)
 {
-	Color baseColor = Color(139,69,19);
-        Color subtractiveColor;
+                        Color baseColor = Color(60, 179, 113);
+                        Color subtractiveColor;
                         double randVal;
                         for (int y = 0; y < height; y++)
                         {
@@ -34,14 +34,24 @@ Color* BrickWallGenerator::GenerateTexData(Color* texData, Color* color, int wid
 
                                 if (randVal > 0.7)
                                 {
-                                    subtractiveColor = Color(45, 45, 19, 0);
+                                    subtractiveColor = Color(25, 25, 25, 0);
+                                }
+                                else if (randVal > 0.5)
+                                {
+                                    subtractiveColor = Color(0, 0, 0, 0);
                                 }
                                 else
                                 {
-                                    subtractiveColor = Color(85, 69, 19, 0);
+                                    subtractiveColor = Color(25, 25, -25, 0);
                                 }
                                 texData[y * width + x] = SubtractColor(baseColor, subtractiveColor);
                             }
                         }
+
+                        texData = AddRectangle(
+                            texData,
+                            width, height,
+                            Rectangle(15, 24, 3, 8),
+                            Color(139,69,19));
                         return texData;
 }

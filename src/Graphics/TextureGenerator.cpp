@@ -1,6 +1,6 @@
 #include "TextureGenerator.h"
 
-using namespace RussianChickenInspector_MINX::Graphics;
+using namespace RussianChickenInspector::Graphics;
 
 TextureGenerator* TextureGenerator::instance = NULL;
 

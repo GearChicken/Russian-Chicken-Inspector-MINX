@@ -7,7 +7,7 @@
 using namespace MINX;
 using namespace MINX::Graphics;
 
-namespace RussianChickenInspector_MINX
+namespace RussianChickenInspector
 {
 	namespace Graphics
 	{

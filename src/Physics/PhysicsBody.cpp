@@ -1,6 +1,6 @@
 #include "PhysicsBody.h"
 
-using namespace RussianChickenInspector_MINX::Physics;
+using namespace RussianChickenInspector::Physics;
 
 void PhysicsBody::Update(GameTime * gameTime)
 {
@@ -14,4 +14,4 @@ void PhysicsBody::Update(GameTime * gameTime)
 	}
 	SetPosition(GetPosition() + velocity);
 	velocity *= DRAG;
-}				
+}

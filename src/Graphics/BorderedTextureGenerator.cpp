@@ -1,6 +1,11 @@
 #include "BorderedTextureGenerator.h"
 
-using namespace RussianChickenInspector_MINX::Graphics;
+using namespace RussianChickenInspector::Graphics;
+
+TextureGenerator* BorderedTextureGenerator::GetInstance()
+{
+	return (instance == NULL) ? instance = new BorderedTextureGenerator() : instance;
+}
 
 Color* BorderedTextureGenerator::GenerateTexData(Color* texData, Color* color, int width, int height)
 {

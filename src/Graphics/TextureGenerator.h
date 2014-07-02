@@ -5,7 +5,7 @@
 using namespace MINX;
 using namespace MINX::Graphics;
 
-namespace RussianChickenInspector_MINX
+namespace RussianChickenInspector
 {
 	namespace Graphics
 	{
@@ -15,11 +15,11 @@ namespace RussianChickenInspector_MINX
 				static TextureGenerator* GetInstance();
 				
 				Texture2D* GenerateTexture(Color* color, int width, int height);
-			
-			private:
-				TextureGenerator();
-				static TextureGenerator* instance;
 			protected:
+				TextureGenerator();
+				
+				static TextureGenerator* instance;
+				
 				virtual Color* GenerateTexData(Color* texData, Color* color, int width, int height);
 				
 				inline Color SubtractColor(Color c1, Color c2){return Color(c1.R-c2.R, c1.G-c2.G, c1.B-c2.B, c1.A-c2.A);}

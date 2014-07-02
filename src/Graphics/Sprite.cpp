@@ -1,6 +1,6 @@
 #include "Sprite.h"
 
-using namespace RussianChickenInspector_MINX::Graphics;
+using namespace RussianChickenInspector::Graphics;
 
 Sprite::Sprite(Texture2D* texture, Vector2 position, Color tintColor, Rectangle* sourceRect, float rotation, Vector2 rotationOrigin, Vector2 scale)
 {

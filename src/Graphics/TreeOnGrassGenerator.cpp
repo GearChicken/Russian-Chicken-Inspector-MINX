@@ -1,17 +1,17 @@
-#include "BrickWallGenerator.h"
+#include "TreeOnGrassGenerator.h"
 #include "MathHelper.h"
 
 using namespace RussianChickenInspector::Graphics;
 
-TextureGenerator* BrickWallGenerator::GetInstance()
+TextureGenerator* TreeOnGrassGenerator::GetInstance()
 {
-	return (instance == NULL) ? instance = new BrickWallGenerator() : instance;
+	return (instance == NULL) ? instance = new TreeOnGrassGenerator() : instance;
 }
 
-Color* BrickWallGenerator::GenerateTexData(Color* texData, Color* color, int width, int height)
+Color* TreeOnGrassGenerator::GenerateTexData(Color* texData, Color* color, int width, int height)
 {
-	Color baseColor = Color(139,69,19);
-        Color subtractiveColor;
+                        Color baseColor = Color(60, 179, 113);
+                        Color subtractiveColor;
                         double randVal;
                         for (int y = 0; y < height; y++)
                         {
@@ -34,14 +34,26 @@ Color* BrickWallGenerator::GenerateTexData(Color* texData, Color* color, int wid
 
                                 if (randVal > 0.7)
                                 {
-                                    subtractiveColor = Color(45, 45, 19, 0);
+                                    subtractiveColor = Color(25, 25, 25, 0);
+                                }
+                                else if (randVal > 0.5)
+                                {
+                                    subtractiveColor = Color(0, 0, 0, 0);
                                 }
                                 else
                                 {
-                                    subtractiveColor = Color(85, 69, 19, 0);
+                                    subtractiveColor = Color(25, 25, -25, 0);
                                 }
                                 texData[y * width + x] = SubtractColor(baseColor, subtractiveColor);
                             }
+                        }
+
+
+                        for (int i = 0; i < 5; i++)
+                        {
+                            int a = (rand() % 31) - 10;
+                            
+                            texData = AddCircle(texData, width, height, (rand() % 5)+8, Vector2((rand() % 17)+8, (rand() % 17)+8), SubtractColor(Color(34,139,34), Color(a, a, a, 0)));
                         }
                         return texData;
 }

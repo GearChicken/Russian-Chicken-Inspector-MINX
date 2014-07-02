@@ -2,9 +2,9 @@
 #include <MINX/GameComponent.h>
 #include <MINX/MathHelper.h>
 
-using namespace RussianChickenInspector_MINX::Graphics;
+using namespace RussianChickenInspector::Graphics;
 
-namespace RussianChickenInspector_MINX
+namespace RussianChickenInspector
 {
 	namespace Physics
 	{

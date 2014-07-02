@@ -4,7 +4,7 @@ namespace RussianChickenInspector
 {
 	namespace Graphics
 	{
-		class DirtGenerator : public TextureGenerator
+		class GrassGenerator : public TextureGenerator
 		{
 			public:
 				static TextureGenerator* GetInstance();

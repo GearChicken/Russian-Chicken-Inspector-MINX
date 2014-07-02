@@ -5,12 +5,14 @@
 #include <MINX/Graphics/Font.h>
 #include <MINX/Input/Keyboard.h>
 #include <MINX/Input/Mouse.h>
+#include "Graphics/EggGenerator.h"
 
 using namespace MINX;
 using namespace MINX::Graphics;
 using namespace MINX::Input;
 
 using namespace RussianChickenInspector;
+using namespace RussianChickenInspector::Graphics;
 
 const int PLAYER_SPAWN_X = 100;
 const int PLAYER_SPAWN_Y = 100;
@@ -39,6 +41,7 @@ void RussianChickenInspector_MINX::Initialize()
 	texBatch = new TextureBatch(ShaderFactory::GetInstance()->GetShaderAtIndex(0));
 	keyboard = new Keyboard(this);
 	mouse = new Mouse(this);
+	srand(time(NULL));
 }
 
 void RussianChickenInspector_MINX::LoadContent()
@@ -61,8 +64,10 @@ void RussianChickenInspector_MINX::Update(GameTime * gameTime)
 
 void RussianChickenInspector_MINX::Draw(GameTime * gameTime)
 {	
-	SetRenderTarget(NULL, MINX::Graphics::Color(100,149,237,255));
+	SetRenderTarget(NULL, MINX::Graphics::Color(51,205,10,255));
+	texBatch->Draw(EggGenerator::GetInstance()->GenerateTexture(new Color(255,0,0),128,128),0,0);
 	
-    //Put stuff here to draw your game each frame.
+	texBatch->DrawLoadedTextures();
+	
 	Game::Draw(gameTime);
 }

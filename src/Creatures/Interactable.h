@@ -1,7 +1,7 @@
 #include <MINX/Rectangle.h>
 #include <string>
 
-namespace RussianChickenInspector_MINX
+namespace RussianChickenInspector
 {
 	namespace Creatures
 	{
