@@ -65,7 +65,7 @@ void RussianChickenInspector_MINX::Update(GameTime * gameTime)
 void RussianChickenInspector_MINX::Draw(GameTime * gameTime)
 {	
 	SetRenderTarget(NULL, MINX::Graphics::Color(51,205,10,255));
-	texBatch->Draw(VillagerGenerator::GetInstance()->GenerateTexture(new Color(255,0,0),128,128),0,0);
+	texBatch->Draw(((TextureGenerator*)VillagerGenerator::GetInstance())->GenerateTexture(new Color(255,0,0),128,128),0,0);
 	
 	texBatch->DrawLoadedTextures();
 	

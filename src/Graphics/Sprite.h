@@ -45,7 +45,7 @@ namespace RussianChickenInspector
 				inline Vector2 GetCenter(){return GetPosition() + Vector2(texture->GetWidth()/2,texture->GetHeight()/2);}
 				
 				virtual void Draw(TextureBatch* texBatch);
-			private:
+			protected:
 				Texture2D* texture;
 				Vector2 position;
 				Color tintColor;
