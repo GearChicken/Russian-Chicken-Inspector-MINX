@@ -5,7 +5,7 @@
 #include <MINX/Graphics/Font.h>
 #include <MINX/Input/Keyboard.h>
 #include <MINX/Input/Mouse.h>
-#include "Graphics/VillagerGenerator.h"
+#include "Graphics/PineTreeOnGrassGenerator.h"
 
 using namespace MINX;
 using namespace MINX::Graphics;
@@ -65,7 +65,7 @@ void RussianChickenInspector_MINX::Update(GameTime * gameTime)
 void RussianChickenInspector_MINX::Draw(GameTime * gameTime)
 {	
 	SetRenderTarget(NULL, MINX::Graphics::Color(51,205,10,255));
-	texBatch->Draw(((TextureGenerator*)VillagerGenerator::GetInstance())->GenerateTexture(new Color(255,0,0),128,128),0,0);
+	texBatch->Draw(PineTreeOnGrassGenerator::GetInstance()->GenerateTexture(new Color(255,0,0),128,128),0,0);
 	
 	texBatch->DrawLoadedTextures();
 	

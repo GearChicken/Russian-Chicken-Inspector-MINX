@@ -91,10 +91,10 @@ bool TextureGenerator::CheckIfPointInTriangle(Vector2 vertex1, Vector2 vertex2, 
             Vector2 v2 = point - vertex1;
 
             double dot00 = vertex1.LengthSquared();
-            double dot01 = vertex1.dotMultiply(vertex2);
-            double dot02 = vertex1.dotMultiply(vertex3);
+            double dot01 = vertex1.Dot(vertex2);
+            double dot02 = vertex1.Dot(vertex3);
             double dot11 = vertex2.LengthSquared();
-            double dot12 = vertex2.dotMultiply(vertex3);
+            double dot12 = vertex2.Dot(vertex3);
 
             double invDenom, u, v;
             invDenom = 1.0 / (dot00 * dot11 - dot01 * dot01);
